@@ -1,0 +1,28 @@
+/* Centers the preloader on the screen with a background overlay */
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #13151a 0%, #1f2937 100%);
+  }
+  
+  .preloader {
+    display: none; /* Hide by default */
+  }
+  
+  .preloader.visible {
+    display: flex; /* Show when visible */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Cover full viewport height */
+  }
+  
+  .preloader.hidden {
+    display: none; /* Hide when not visible */
+  }
+  

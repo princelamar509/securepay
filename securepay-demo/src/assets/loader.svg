@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80">
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2B4B6F"/>
+      <stop offset="100%" style="stop-color:#1B3355"/>
+    </linearGradient>
+    <linearGradient id="shineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.2)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+    </linearGradient>
+    
+    <!-- Pulse animation -->
+    <animate id="pulse" 
+            attributeName="opacity"
+            values="1;0.8;1"
+            dur="2s"
+            repeatCount="indefinite"/>
+            
+    <!-- Shield shine animation -->
+    <linearGradient id="animatedShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0)">
+        <animate attributeName="offset" 
+                 values="-1;1"
+                 dur="3s"
+                 repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:rgba(255,255,255,0.2)">
+        <animate attributeName="offset" 
+                 values="-0.5;1.5"
+                 dur="3s"
+                 repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0)">
+        <animate attributeName="offset" 
+                 values="0;2"
+                 dur="3s"
+                 repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <!-- Add a line gradient if needed -->
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2B4B6F"/>
+      <stop offset="100%" style="stop-color:#1B3355"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main shield -->
+  <path d="M35 10 
+           C35 10, 50 5, 65 10
+           L65 35 
+           C65 35, 50 55, 35 35 
+           Z" 
+        fill="url(#shieldGradient)" 
+        stroke="#2B4B6F" 
+        stroke-width="1.5">
+    <animate attributeName="fill-opacity"
+             values="1;0.9;1"
+             dur="2s"
+             repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Shield shine overlay with animation -->
+  <path d="M35 10 
+           C35 10, 50 5, 65 10
+           L65 35 
+           C65 35, 50 55, 35 35 
+           Z" 
+        fill="url(#animatedShine)"/>
+  
+  <!-- Enhanced lock body -->
+  <rect x="43" y="25" width="14" height="15" rx="3" 
+        fill="white" stroke="#2B4B6F" stroke-width="0.5">
+    <!-- Lock appear animation -->
+    <animate attributeName="y"
+             values="20;25"
+             dur="0.5s"
+             begin="0s"
+             fill="freeze"/>
+  </rect>
+  
+  <!-- Enhanced lock shackle with animation -->
+  <path d="M46 25 
+           C46 25, 46 18, 50 18 
+           C54 18, 54 25, 54 25" 
+        fill="none" 
+        stroke="white" 
+        stroke-width="3" 
+        stroke-linecap="round">
+    <animate attributeName="d"
+             values="M46 25 C46 25, 46 18, 50 18 C54 18, 54 25, 54 25;
+                     M46 25 C46 25, 46 20, 50 20 C54 20, 54 25, 54 25;
+                     M46 25 C46 25, 46 18, 50 18 C54 18, 54 25, 54 25"
+             dur="2s"
+             begin="0s"
+             repeatCount="1"/>
+  </path>
+  
+  <!-- Lock keyhole -->
+  <circle cx="50" cy="31" r="2" fill="#2B4B6F">
+    <animate attributeName="fill-opacity"
+             values="1;0.7;1"
+             dur="2s"
+             repeatCount="indefinite"/>
+  </circle>
+  <rect x="49" y="31" width="2" height="4" fill="#2B4B6F"/>
+  
+  <!-- Company name with fade in -->
+  <text x="80" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#2B4B6F">
+    <animate attributeName="opacity"
+             values="0;1"
+             dur="1s"
+             begin="0s"
+             fill="freeze"/>
+    Secure<tspan fill="white">Pay</tspan>
+  </text>
+  
+  <!-- Animated underline -->
+  <path d="M80 50 L255 50" 
+        stroke="url(#lineGradient)" 
+        stroke-width="2">
+    <animate attributeName="stroke-dasharray"
+             values="0,175;175,0"
+             dur="1s"
+             begin="0s"
+             fill="freeze"/>
+  </path>
+</svg>

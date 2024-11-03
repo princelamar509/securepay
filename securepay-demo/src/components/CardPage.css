@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+
+
+section {
+  position: relative;
+  min-height: 95vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 5rem;
+  background: linear-gradient(135deg, #13151a 0%, #1f2937 100%);
+}
+
+/* Animated Background Effect */
+section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, #0284c7 0%, transparent 70%);
+  opacity: 0.15;
+  filter: blur(80px);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+.card-page {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  z-index: 1;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 508px;
+  height: auto;
+  aspect-ratio: 1.618/1;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backface-visibility: hidden;
+}
+
+.front {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.back {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(10px);
+  transform: rotateY(180deg);
+}
+
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .back {
+  transform: rotateY(360deg);
+}
+
+/* Card Elements Styling */
+.debit {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.bank {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.chip {
+  position: absolute;
+  top: 80px;
+  left: 30px;
+  width: 60px;
+  height: 45px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+  border-radius: 8px;
+}
+
+.number {
+  position: absolute;
+  bottom: 100px;
+  left: 30px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.valid {
+  position: absolute;
+  bottom: 60px;
+  left: 30px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cardHolder {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Form Styling */
+.card-info {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #fff 0%, #a3a3a3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-info label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #a3a3a3;
+}
+
+.card-info input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card-info input:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
+}
+
+.card-info button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-info button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(2, 132, 199, 0.2);
+}
+
+
+
+
+.card .view.front::after {
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    right: 80px;
+    width: 60px;
+    height: 60px;
+    background: #fc4a1b;
+    border-radius: 50%;
+    opacity: 0.9;
+  }
+  
+  .card .view.front::before {
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: #FFD200;
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+  
+  .card .view.front .debit {
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  .card .view.front .bank {
+    position: absolute;
+    right: 40px;
+    top: 25px;
+    color: #fff;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 24px;
+  }
+  
+  .card .view.front .chip {
+    position: absolute;
+    top: 80px;
+    left: 30px;
+    max-width: 70px;
+  }
+  
+  .card .view.front .number {
+    position: absolute;
+    bottom: 130px;
+    left: 40px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 8px;
+    font-size: 24px;
+    text-shadow: 0 2px 1px #000005;
+  }
+  
+  .card .view.front .valid {
+    position: absolute;
+    bottom: 90px;
+    left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 300;
+    line-height: 1em;
+    text-align: right;
+  }
+  
+  .card .view.front .valid span:last-child {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing:  1px;
+  }
+  
+  .card .view.front .cardHolder {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 4px;
+  }
+  
+  .card .view.back .blackbar {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    height: 60px;
+    background: #000;
+  }
+  
+  .card .view.back .cvvtext {
+    position: absolute;
+    top: 120px;
+    left: 30px;
+  }
+  
+  .card .view.back .cvvtext h5 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .card .view.back .cvvtext .whiteBar {
+    position: relative;
+    width: 400px;
+    height: 40px;
+    background: #fff;
+    margin-top: 5px;
+  }
+  
+  .card .view.back .cvvtext .cvv {
+    position: relative;
+    background: #ccc;
+    color: #111;
+    width: 50px;
+    height: 35px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 400px;
+    top: -38px;
+    font-style: italic;
+  }
+  
+  .card .view.back .text {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    color: #fff;
+    font-size: 10px;
+    line-height: 1.4em;
+    font-weight: 300;
+  }
+  
+
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-page {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 1rem;
+
+  }
+
+  .card {    
+    max-width: 450px;
+  }
+
+  .debit {  
+    font-size: 1.2rem;
+  }
+
+  .card .view.back .cvvtext .whiteBar {
+    position: relative;
+    width: 400px;
+    height: 40px;
+    background: #fff;
+    margin-top: 5px;
+    left: -29px;
+  }
+  .card .view.back .cvvtext .cvv {
+  left: 371px;
+  max-width: fit-content;
+  gap: .4rem;
+  }
+
+  section {
+    padding: 1rem;
+    min-height: 150vh;
+   margin-bottom: 5rem;
+  }
+
+  .number {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    margin-bottom: -0.9rem;
+  }
+
+  .bank {
+    font-size: 1.2rem;
+  }
+
+  .card-info {
+    padding: 1.5rem;
+  }
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card, .card-info {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Card Hover Effects */
+.view {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card:hover .view {
+  box-shadow: 0 25px 45px rgba(2, 132, 199, 0.2);
+}
