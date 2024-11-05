@@ -270,6 +270,7 @@ section::before {
     letter-spacing: 8px;
     font-size: 24px;
     text-shadow: 0 2px 1px #000005;
+
   }
   
   .card .view.front .valid {
@@ -372,6 +373,7 @@ section::before {
 
   .card {    
     max-width: 450px;
+    overflow: hidden;
   }
 
   .debit {  
@@ -389,22 +391,21 @@ section::before {
   .card .view.back .cvvtext .cvv {
   left: 371px;
   max-width: fit-content;
-  gap: .4rem;
+  
   }
+  .card .view.front .number{
+    font-size: 1.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: fit-content;
+  }
+
 
   section {
     padding: 1rem;
     min-height: 150vh;
    margin-bottom: 5rem;
-  }
 
-  .number {
-    font-size: 1.4rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-    margin-bottom: -0.9rem;
   }
 
   .bank {
@@ -413,6 +414,16 @@ section::before {
 
   .card-info {
     padding: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+  .number {
+    font-size: 1.4rem; 
+  }
+  .card-info input {
+    width: 100%;
   }
 }
 

@@ -13,11 +13,11 @@ const CardPage = () => {
         <input type="text" placeholder="Enter Card Holder Name" />
         <label>Expire Date</label>
         <input type="text" placeholder="MM/YY" />
-        <div class="cvv-container">
+        <div className="cvv-container">
   <label>CVV</label>
   <input type="text" placeholder="Enter CVV" />
-  <span class="info-icon">?</span>
-  <div class="tooltip">The CVV is a 3-digit code found on the back of your card.</div>
+  <span className="info-icon">?</span>
+  <div className="tooltip">The CVV is a 3-digit code found on the back of your card.</div>
 </div>
 <button onClick={() => {alert('Card added to wallet successfully!'); }}>Add to Wallet</button>
 
