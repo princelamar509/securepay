@@ -362,7 +362,7 @@ section::before {
   
 
   
-/* Responsive Design */
+/* Responsive Design 
 @media (max-width: 768px) {
   .card-page {
     grid-template-columns: 1fr;
@@ -432,8 +432,118 @@ section::before {
   }
 
 
+} */
+
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+  section {
+    padding: 1.5rem;
+  }
+
+  .card-page {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    max-width: 90%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .card-info {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .card-info input,
+  .card-info button {
+    font-size: 0.9rem;
+  }
 }
 
+/* Mobile Landscape */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+ 
+  }
+  section {
+    padding: 1rem;
+    min-height: 150vh;
+    margin-bottom: 3rem;
+  }
+
+  .debit, .bank, .number, .valid, .cardHolder {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .chip {
+    width: 50px;
+    height: 35px;
+  }
+
+  .card-info {
+    padding: 1rem;
+  }
+
+  .card-info label,
+  .card-info input,
+  .card-info button {
+    font-size: 0.8rem;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  section {
+    padding: 1rem;
+    min-height: 150vh;
+    margin-bottom: 4rem;
+  }
+  .card-page {
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .card {
+    aspect-ratio: 1 / 1;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .debit, .bank, .number, .valid, .cardHolder {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  .chip {
+    width: 40px;
+    height: 30px;
+  }
+
+  .card-info input,
+  .card-info button {
+    padding: 10px 14px;
+    font-size: 0.75rem;
+  }
+
+  .card-info button {
+    padding: 12px;
+  }
+}
 
 
 /* Animations */
