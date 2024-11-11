@@ -382,22 +382,24 @@ section::before {
 
   .card .view.back .cvvtext .whiteBar {
     position: relative;
-    width: 400px;
+    width: 390px;
     height: 40px;
     background: #fff;
     margin-top: 5px;
     left: -29px;
   }
   .card .view.back .cvvtext .cvv {
-  left: 371px;
+    left: 371px;
   max-width: fit-content;
-  
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.1rem;
   }
   .card .view.front .number{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     white-space: nowrap;
     overflow: hidden;
-    max-width: fit-content;
+    max-width: fit-content; 
   }
 
 
@@ -419,12 +421,17 @@ section::before {
     margin: 0 auto;
     margin-top: 2rem;
   }
+
   .number {
-    font-size: 1.4rem; 
+   font-size: 1.2rem;
+   overflow: hidden;
+   max-width: fit-content;
+  letter-spacing: 1px;
+  
+
   }
-  .card-info input {
-    width: 100%;
-  }
+
+
 }
 
 
