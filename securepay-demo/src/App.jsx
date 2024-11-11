@@ -11,6 +11,7 @@ import ContactsPage from './components/ContactsPage';
 import LoginForm from './components/LoginForm';
 import CardPage from './components/CardPage'
 import Message from './components/Message';
+
 const mockUsers = {
   user123: {
     id: 'user123',
@@ -43,8 +44,8 @@ function App() {
   useEffect(() => {
     const login = async () => {
       // Simulate an API call
-      await new Promise(resolve => setTimeout(resolve, 3000)); // Simulates a 2-second loading time
-      setLoading(false); // Set loading to false after the "login" completes
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      setLoading(false); 
     };
 
     login();

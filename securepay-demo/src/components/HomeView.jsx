@@ -6,8 +6,6 @@ import { useNavigate } from 'react-router-dom';
 const HomeView = ({ user }) => {
   const navigate = useNavigate();
 
-  console
-
   return (
     <div className="home-container">
       <div className="balance-card">
