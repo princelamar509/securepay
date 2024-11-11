@@ -450,7 +450,7 @@ font-size: 1.1rem;
 
 }
 
-/* Mobile Portrait */
+/* Mobile Portrait 
 @media (max-width: 480px) {
   section {
     padding: 1rem;
@@ -490,7 +490,7 @@ font-size: 1.1rem;
     padding: 12px;
   }
 }
-
+*/
 
 /* Animations */
 @keyframes fadeIn {
