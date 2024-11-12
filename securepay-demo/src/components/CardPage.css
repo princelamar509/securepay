@@ -372,7 +372,7 @@ section::before {
   }
 
   .card {
-    max-width: 90%;
+    max-width: 100%;
     aspect-ratio: 1 / 1;
   }
 
@@ -399,22 +399,7 @@ section::before {
     white-space: nowrap;
  }
 
- .card .view.back .cvvtext .cvv {
-  left: 371px;
-max-width: fit-content;
-overflow: hidden;
-white-space: nowrap;
-font-size: 1.1rem;
-}
 
-.card .view.back .cvvtext .whiteBar {
-  position: relative;
-  width: 390px;
-  height: 40px;
-  background: #fff;
-  margin-top: 5px;
-  left: -29px;
-}
 
  section {
   padding: 1rem;
@@ -450,7 +435,7 @@ font-size: 1.1rem;
 
 }
 
-/* Mobile Portrait 
+
 @media (max-width: 480px) {
   section {
     padding: 1rem;
@@ -490,7 +475,7 @@ font-size: 1.1rem;
     padding: 12px;
   }
 }
-*/
+
 
 /* Animations */
 @keyframes fadeIn {
