@@ -399,6 +399,14 @@ section::before {
     white-space: nowrap;
  }
 
+ .card .view.back .cvvtext .whiteBar {
+    width: 300px;
+  
+ }
+ .card .view.back .cvvtext .cvv {
+  left:290px;
+  
+  }
 
 
  section {
@@ -448,6 +456,7 @@ section::before {
   }
 
   .card {
+    max-width: 100%;
     aspect-ratio: 1 / 1;
   }
 
@@ -458,6 +467,8 @@ section::before {
   .debit, .bank, .number, .valid, .cardHolder {
     font-size: 0.75rem;
     letter-spacing: 0.5px;
+    line-height: 1.2em;
+    white-space: nowrap;
   }
 
   .chip {
@@ -474,6 +485,16 @@ section::before {
   .card-info button {
     padding: 12px;
   }
+
+  .card .view.back .cvvtext .whiteBar {
+    width: 300px;
+  
+ }
+ .card .view.back .cvvtext .cvv {
+  left:290px;
+  
+  }
+
 }
 
 
