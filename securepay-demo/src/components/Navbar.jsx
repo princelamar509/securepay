@@ -6,6 +6,18 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const navigate = useNavigate();
   const [showTooltip, setShowTooltip] = useState(false);
+ const [isSetttingsOpen, setIsSettingsOpen] = useState(false);
+
+ const handleToggle = () => {
+  if (isSetttingsOpen){
+    setIsSettingsOpen(false);
+  } else {
+    setIsSettingsOpen(true);
+    navigate('/settings')
+  }
+ };
+
+
 
   return (
     <nav className="navbar">
@@ -26,9 +38,15 @@ const Navbar = () => {
           </div>
         )}
 
-        <button onClick={() => navigate('/settings')}>
+        <button onClick={handleToggle} >
           <User className="icon" />
         </button>
+       {
+       isSetttingsOpen && (<div>
+       </div>)}
+        
+       
+  
       </div>
     </nav>
   );
