@@ -16,7 +16,7 @@ const AddMoneyPage = ({ user }) => {
 
   return (
     <div className="add-money-container">
-      <h2>Add Money</h2>
+      <h2 className="add-money-title">Add Money</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Amount ($)</label>

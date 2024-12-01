@@ -205,7 +205,7 @@
   
 
 
-  /* Root variables for easy customization */
+  /* Root variables make it easy to change colors and sizes */
 :root {
     --wave-bg: #0284c7;
     --content-color: #ffffff;

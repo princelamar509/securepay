@@ -5,7 +5,7 @@ import { Lock, Fingerprint, CreditCard, LogOut } from 'lucide-react';
 const SettingsView = ({ user }) => {
   return (
     <div className="settings-container">
-      <h2>Settings</h2>
+      <h2 className='settings-title'>Settings</h2>
 
       <div className="account-info">
         <h3>Account Information</h3>

@@ -38,7 +38,7 @@ const SendMoneyPage = ({ user }) => {
 
   return (
     <div className="send-money-container">
-      <h2>Send Money</h2>
+      <h2 className="page-title">Send Money</h2>
       <form onSubmit={handleSubmit}>
       <div className="form-group">
         <label>Recipient Name </label>

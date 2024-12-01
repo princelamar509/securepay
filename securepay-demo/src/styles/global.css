@@ -316,9 +316,21 @@ body {
   margin-bottom: 30px;
 }
 
-
+.add-money-title {  
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
 
   /* sendmoney-page */
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+  }
 
   .send-money-container {
     padding: 2rem;
@@ -497,20 +509,26 @@ body {
 
 
 
+.settings-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
 
 
 .settings-tab {
-  position: absolute; /* To position relative to the button */
-  top: 50px; /* Adjust based on the button's location */
-  right: 0; /* Align it to the right */
-  width: 200px; /* Set the width of the tab */
-  background-color: #fff; /* White background */
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 16px; /* Space inside the tab */
-  z-index: 100; /* Ensure it appears above other elements */
-  animation: fadeIn 0.3s ease; /* Optional: Fade-in animation */
+  position: absolute; 
+  top: 50px; 
+  right: 0; 
+  width: 200px;
+  background-color: #fff; 
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 16px; 
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
 }
 
 /* Optional: Fade-in animation */
