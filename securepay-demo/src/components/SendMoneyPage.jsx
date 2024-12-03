@@ -67,12 +67,16 @@ const SendMoneyPage = ({ user }) => {
             required
           />
         </div>
-
+       <div className='form-group1'>
+       <textarea className="form-group" placeholder="Enter message (optional)"></textarea>
+       </div>
         {showIDUpload && (
           <div className="id-verification">
             <h3>ID Verification Required</h3>
             <div className="form-group">
               <label>Upload ID Front</label>
+              <UploadCloud />
+              <Camera />
               <input
                 type="file"
                 accept="image/*"
@@ -83,6 +87,8 @@ const SendMoneyPage = ({ user }) => {
 
             <div className="form-group">
               <label>Upload ID Back</label>
+              <UploadCloud />
+              <Camera />
               <input
                 type="file"
                 accept="image/*"
