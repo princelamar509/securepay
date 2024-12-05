@@ -439,7 +439,12 @@ section::before {
   .title {
     font-size: 1.3rem;
   }
-
+.text {
+    font-size: 0.8rem;
+    line-height: 1.2em;
+  white-space: wrap;
+  overflow: hidden;
+}
 
 }
 
@@ -459,7 +464,13 @@ section::before {
     max-width: 100%;
     aspect-ratio: 1 / 1;
   }
-
+  .text {
+    font-size: 0.8rem;
+    line-height: 1.2em;
+    white-space: wrap;
+    overflow: hidden;
+    
+}
   .title {
     font-size: 1.1rem;
   }
