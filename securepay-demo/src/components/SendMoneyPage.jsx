@@ -1,6 +1,6 @@
 // src/components/SendMoneyPage.jsx
 import React, { useState } from 'react';
-import { Camera, UploadCloud } from 'lucide-react';
+import { Camera, UploadCloud, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const SendMoneyPage = ({ user }) => {
@@ -11,7 +11,7 @@ const SendMoneyPage = ({ user }) => {
   const [frontID, setFrontID] = useState(null);
   const [backID, setBackID] = useState(null);
   const navigate = useNavigate();
-
+  const [showMessage, setShowMessage] = useState(false);
   const handleAmountChange = (e) => {
     const value = parseFloat(e.target.value);
     setAmount(value);
@@ -34,6 +34,13 @@ const SendMoneyPage = ({ user }) => {
       console.log('ID Back:', backID);
     }
     navigate('/');
+  };
+
+  const handleClose = () => {
+    setShowMessage(true); 
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
   };
 
   return (
@@ -72,7 +79,7 @@ const SendMoneyPage = ({ user }) => {
        </div>
         {showIDUpload && (
           <div className="id-verification">
-            <h3>ID Verification Required</h3>
+            <h3 className='id-verification-title'>ID Verification Required</h3>
             <div className="form-group">
               <label>Upload ID Front</label>
               <UploadCloud />
@@ -102,12 +109,19 @@ const SendMoneyPage = ({ user }) => {
           Send Money
         </button>
       </form>
-      <div className="caution-section">
+      <div>
+      <button className="btn-caution">
+      <X className="icon-x" onClick={handleClose} />
+      </button>
+      {showMessage && (<div className="caution-section">
       <div className="attention-title">Attention!!!</div>
       <p className="attention-text">
         Before sending money to anyone, ensure they meet all criteria, especially if you’re sending money to someone new or whom you don't know.
          For any amount above $1,000, identification is required. If unsure, call our support team at (1-800) 888-5567 24/7. Stay cautious and secure!
       </p>
+     
+    </div>
+    )}
     </div>
     </div>
   );
