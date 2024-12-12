@@ -741,4 +741,10 @@ z-index: 1;
     text-decoration: underline;
   }
  
+  .form-group1{
+    margin-bottom: 1rem;
+    display: flex;
+   width: 280px;
+   height: 75px;
+  }
 }
