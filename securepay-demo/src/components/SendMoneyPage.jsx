@@ -11,13 +11,16 @@ const SendMoneyPage = ({ user }) => {
   const [frontID, setFrontID] = useState(null);
   const [backID, setBackID] = useState(null);
   const navigate = useNavigate();
-  const [showMessage, setShowMessage] = useState(false);
+  const [showMessage, setShowMessage] = useState(true);
+  const [message, setMessage] = useState('');
+
   const handleAmountChange = (e) => {
     const value = parseFloat(e.target.value);
     setAmount(value);
-
-    // Show ID verification if amount is above $1000
-    if (value > 1000) {
+ 
+  
+    // Show ID verification if amount is equal or above $1000
+    if (value >= 1000) {
       setShowIDUpload(true);
     } else {
       setShowIDUpload(false);
@@ -28,6 +31,16 @@ const SendMoneyPage = ({ user }) => {
     e.preventDefault();
     alert('Transaction submitted successfully!');
     // Add transaction submission logic here, e.g., sending data to backend
+   
+    setAmount('')
+    setRecipientContact('')
+    setRecipientName('')
+    setMessage('')
+    setFrontID(null)
+    setBackID(null)
+
+
+
     console.log(`Sending $${amount} to ${recipient}`);
     if (showIDUpload) {
       console.log('ID Front:', frontID);
@@ -36,11 +49,13 @@ const SendMoneyPage = ({ user }) => {
     navigate('/');
   };
 
-  const handleClose = () => {
-    setShowMessage(true); 
-    setTimeout(() => {
-      setShowMessage(false);
-    }, 3000);
+  const handleToggleMessage = () => {
+    setShowMessage((prevState) => !prevState); 
+
+  };
+
+  const handleMessageChange = (e) => {
+    setMessage(e.target.value);
   };
 
   return (
@@ -75,8 +90,13 @@ const SendMoneyPage = ({ user }) => {
           />
         </div>
        <div className='form-group1'>
-       <textarea className="form-group" placeholder="Enter message (optional)"></textarea>
-       </div>
+    <textarea 
+      className="form-group1" 
+      placeholder="Enter message (optional)"
+      value={message}
+      onChange={handleMessageChange}
+    ></textarea>
+  </div>
         {showIDUpload && (
           <div className="id-verification">
             <h3 className='id-verification-title'>ID Verification Required</h3>
@@ -105,21 +125,21 @@ const SendMoneyPage = ({ user }) => {
             </div>
           </div>
         )}
-        <button type="submit" className="btn-primary" >
-          Send Money
+        <button type="submit" className='btn-primary'  > 
+            Send Money
         </button>
       </form>
-      <div>
+      <div className='message-container'>
       <button className="btn-caution">
-      <X className="icon-x" onClick={handleClose} />
+      <X className="icon-x" onClick={handleToggleMessage} />
       </button>
-      {showMessage && (<div className="caution-section">
-      <div className="attention-title">Attention!!!</div>
+      {showMessage &&  (<div className="caution-section">
+      <div className="attention-title">Attention !!! </div>
       <p className="attention-text">
         Before sending money to anyone, ensure they meet all criteria, especially if you’re sending money to someone new or whom you don't know.
-         For any amount above $1,000, identification is required. If unsure, call our support team at (1-800) 888-5567 24/7. Stay cautious and secure!
+         For any amount equal or above $1,000, identification is required. If unsure, call our support team at (1-800) 888-5567 24/7. Stay cautious and secure!
       </p>
-     
+    
     </div>
     )}
     </div>
