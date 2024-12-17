@@ -21,7 +21,7 @@ const SettingsView = ({ user }) => {
         <button className="btn-secondary">
           <Lock className="icon" /> Change Password
         </button>
-        <button className="btn-secondary">
+        <button className="btn-secondary" onAuxClick={() => alert('Biometric Authentication')}>
           <Fingerprint className="icon" /> Manage Biometric Authentication
         </button>
       </div>
