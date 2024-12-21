@@ -7,6 +7,8 @@ import './LoginForm.css';
 const LoginForm = ({ setIsAuthenticated }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
   const [isSignUp, setIsSignUp] = useState(false);
   const navigate = useNavigate();
@@ -24,13 +26,42 @@ const LoginForm = ({ setIsAuthenticated }) => {
     setGreeting(greetingMessage);
   }, []); 
 
-  const handleChange = (event) => {
+
+/*
+  const handleInputChange  = (event) => {
     setInputValue(event.target.value);
+    setUsername(event.target.value);
+    setPassword(event.target.value);
+    setEmail(event.target.value);
+    setPhone(event.target.value);
   };
+*/
+
+const handleInputChange = (event) => {
+  const { name, value } = event.target;
+
+  if (name === "username") {
+    setUsername(value);
+  } else if (name === "password") {
+    setPassword(value);
+  } else if (name === "email") {
+    setEmail(value);
+  } else if (name === "phone") {
+    setPhone(value);
+  }
+};
+
+const handleSignUp = () => {
+  alert("Your account has been successfully created! Welcome aboard!");
+  setIsSignUp(false);
+};
+
+
+
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
     setError(''); 
-  };
+  }; 
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -75,15 +106,16 @@ const LoginForm = ({ setIsAuthenticated }) => {
             <div className="form-panel1">
               <div className="form-content">
                 <h2 className="form-title1">Welcome to SecurePay<br/> <Shield className="icon" size={40}/> </h2>
-                <form className="form-fields">
+                <form className="form-fields" >
                   <div className="form-group">
                     <User className="icon" size={20} />
                     <input
                       type="text"
                       placeholder="Username"
+                      name='username'
                       className="input-field"
-                      value={inputValue} 
-                      onChange={handleChange}
+                      value={username} 
+                      onChange={handleInputChange}
                       required
                     />
                   </div>
@@ -91,10 +123,11 @@ const LoginForm = ({ setIsAuthenticated }) => {
                     <Mail className="icon" size={20} />
                     <input
                       type="email"
+                      name='email'
                       placeholder="Email"
                       className="input-field"
-                      value={inputValue} 
-                      onChange={handleChange}
+                      value={email} 
+                      onChange={handleInputChange}
                       required
                     />
                   </div>
@@ -102,10 +135,11 @@ const LoginForm = ({ setIsAuthenticated }) => {
                     <Phone className="icon" size={20} />
                     <input
                       type="tel"
+                      name='phone'
                       placeholder="Phone Number"
                       className="input-field"
-                      value={inputValue} 
-                      onChange={handleChange}
+                      value={phone} 
+                      onChange={handleInputChange}
                       required
                     />
                   </div>
@@ -113,14 +147,15 @@ const LoginForm = ({ setIsAuthenticated }) => {
                     <Lock className="icon" size={20} />
                     <input
                       type="password"
+                      name='password'
                       placeholder="Password"
                       className="input-field"
-                      value={inputValue} 
-                      onChange={handleChange}
+                      value={password} 
+                      onChange={handleInputChange}
                       required
                     />
                   </div>
-                  <button className="submit-button">Sign Up</button>
+                  <button className="submit-button" type="submit"   onClick={handleSignUp} >Sign Up</button>
                 </form>
                 <button onClick={toggleForm} className="toggle-button">
                   Already have an account? <ChevronLeft className="ml-1" size={20} />
@@ -140,7 +175,7 @@ const LoginForm = ({ setIsAuthenticated }) => {
                     <Mail className="icon" size={20} />
                     <input
                       type="text"
-                      placeholder="Type JAMES"
+                      placeholder="Type JAMES To Sign In"
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
                       className="input-field"
@@ -151,7 +186,7 @@ const LoginForm = ({ setIsAuthenticated }) => {
                     <Lock className="icon" size={20} />
                     <input
                       type="password"
-                      placeholder="Type JAMES"
+                      placeholder="Type JAMES To Sign In"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       className="input-field"
