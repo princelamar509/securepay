@@ -29,7 +29,7 @@ const Navbar = () => {
         <button
           onClick={() => setShowTooltip(!showTooltip)}
           onBlur={() => setShowTooltip(false)}
-        >
+        > 
           <Bell className="icon" />
         </button>
         {showTooltip && (
