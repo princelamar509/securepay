@@ -87,6 +87,8 @@ body {
   
   .bottom-nav button.active {
     color: #007bff;
+    font-weight: bold;
+    font-size: larger;
   }
   
   .bottom-nav button:hover {
