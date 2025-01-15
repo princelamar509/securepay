@@ -24,7 +24,7 @@ const mockUsers = {
       { recipient: 'Jane Smith', amount: 250, timestamp: '2024-03-15', type: 'sent' },
       { recipient: 'Dunkin Donuts', amount: 14.57, timestamp: '2024-03-14', type: 'sent' },
       { recipient: 'Bob Wilson', amount: 100, timestamp: '2024-03-13', type: 'received' },
-      { recipient: 'Jams Madeus', amount: 200, timestamp: '2024-03-12', type: 'received' },
+      { recipient: 'Jams Madeus', amount: 250, timestamp: '2024-03-12', type: 'received' },
       { recipient: 'Marie Louise', amount: 300, timestamp: '2024-03-11', type: 'sent' },
       { recipient: 'Joe Steifel', amount: 400, timestamp: '2024-03-10', type: 'received' },
     ],
