@@ -12,6 +12,7 @@ section {
   padding: 2rem;
   margin-bottom: 5rem;
   background: linear-gradient(135deg, #13151a 0%, #1f2937 100%);
+  border-radius: 0 15px 0 15px;
 }
 
 /* Animated Background Effect */
