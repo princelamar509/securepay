@@ -1,7 +1,8 @@
 // src/components/BottomNav.jsx
 import React from 'react';
-import { Home, Send, History, Users } from 'lucide-react';
+import { Home, Send, History, Users, DivideCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import '../App.css';
 
 const BottomNav = ({ setCurrentView, currentView }) => {
   const navigate = useNavigate();
@@ -17,6 +18,8 @@ const BottomNav = ({ setCurrentView, currentView }) => {
         onClick={() => handleNavigation('home', '/')}
         className={currentView === 'home' ? 'active' : ''}
       >
+         
+        
         <Home className="icon" />
         Home
       </button>
@@ -45,6 +48,7 @@ const BottomNav = ({ setCurrentView, currentView }) => {
         Contacts
       </button>
     </div>
+   
   );
 };
 

@@ -5,12 +5,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+ 
   }
 
   .auth-form-container {
     position: relative;
     width: 100%;
     max-width: 450px;
+    
   }
 
   .auth-card {
@@ -55,7 +57,7 @@
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
-    border-radius: 25px 15px  25px 15px;
+   border-radius: 20px;
     padding: 10px 20px;
     background-color: #fafafa;
   }
@@ -147,6 +149,9 @@
     0% {
       background-position: 0% 0%;
     }
+    50% {
+      background-position: 100% 0%;
+    }
     100% {
       background-position: 300% 0%;
     }
@@ -183,29 +188,28 @@
   
 
   .auth-card.dark-mode {
-    background: linear-gradient(135deg, #13151a 0%, #1f2937 100%);
-    color: #1f9ecd;
+    background: url('https://www.shutterstock.com/shutterstock/videos/1023110074/thumb/1.jpg?ip=x480');
+    color: #f4f8fa;
      border-radius: 19px ;
 
- 
   }
 
 
   .auth-form-container.dark-mode .input-field {
     background-color: #ffffff;
-    color: #f0f0f0;
+    color: #f9f9f9;
   }
   
   .auth-form-container.dark-mode .submit-button {
     color: #f0f0f0;
-    background-color: #1f9ecd;
+    background-color: #2e7691;
   }
   
   
 
 
 
-:root {
+/*:root {
     --wave-bg: #0284c7;
     --content-color: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.5);
@@ -271,7 +275,10 @@
   
   @keyframes rotateWave {
     0% {
-      transform: translate(-50%, -75%) rotate(0deg);
+      transform: translate(-50%, -75%) rotate(20deg);
+    }
+    40% {
+      transform: translate(-50%, -75%) rotate(180deg);
     }
     100% {
       transform: translate(-50%, -75%) rotate(360deg);
@@ -295,7 +302,7 @@
   }
  
 
-  /* Responsive Design */
+  /* Responsive Design 
   @media (max-width: 768px) {
     .auth-card {
       padding: 30px 20px;
@@ -345,3 +352,5 @@
   .input-field:hover {
     border-color: #94a3b8;
   }
+
+  */

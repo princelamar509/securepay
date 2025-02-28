@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-left">
         <Shield className="icon" size={30}   />
-        <span className="name-title">SecurePay</span>
+        <span className="name-title">Secure<strong className='tittle'>Pay</strong></span>
       </div>
       <div className="nav-right">
         <button
