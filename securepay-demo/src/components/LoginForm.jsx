@@ -15,9 +15,9 @@ const LoginForm = ({ setIsAuthenticated }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [greeting, setGreeting] = useState("");
+ 
 
-
-  useEffect(() => {
+ useEffect(() => {
     const currentHour = new Date().getHours();
     const greetingMessage = 
       currentHour < 12 ? "Good Morning!" :
@@ -25,6 +25,9 @@ const LoginForm = ({ setIsAuthenticated }) => {
       "Good Evening!";
     setGreeting(greetingMessage);
   }, []); 
+
+
+
 
 
 /*
@@ -76,9 +79,9 @@ const handleSignUp = () => {
 
   return (
     <div className="auth-page">
-
+   
 <section>
-     
+
       <div className="wave">
         <span></span>
         <span></span>

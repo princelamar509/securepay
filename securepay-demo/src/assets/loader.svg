@@ -1,3 +1,5 @@
+
+
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80">
   <defs>
     <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -18,7 +20,7 @@
             
     <!-- Shield shine animation -->
     <linearGradient id="animatedShine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:rgba(255,255,255,0)">
+      <stop offset="0%" style="stop-color:rgba(228, 222, 222, 0)">
         <animate attributeName="offset" 
                  values="-1;1"
                  dur="3s"
@@ -51,7 +53,7 @@
            C65 35, 50 55, 35 35 
            Z" 
         fill="url(#shieldGradient)" 
-        stroke="#2B4B6F" 
+        stroke="#ff0b75" 
         stroke-width="1.5">
     <animate attributeName="fill-opacity"
              values="1;0.9;1"
@@ -69,7 +71,7 @@
   
   <!-- Enhanced lock body -->
   <rect x="43" y="25" width="14" height="15" rx="3" 
-        fill="white" stroke="#2B4B6F" stroke-width="0.5">
+        fill="white" stroke="#6e020c" stroke-width="0.8">
     <!-- Lock appear animation -->
     <animate attributeName="y"
              values="20;25"
@@ -96,16 +98,16 @@
   </path>
   
   <!-- Lock keyhole -->
-  <circle cx="50" cy="31" r="2" fill="#2B4B6F">
+  <circle cx="50" cy="31" r="2" fill="#6e020c">
     <animate attributeName="fill-opacity"
              values="1;0.7;1"
              dur="2s"
              repeatCount="indefinite"/>
   </circle>
-  <rect x="49" y="31" width="2" height="4" fill="#2B4B6F"/>
+  <rect x="49" y="31" width="2" height="4" fill="#ff0b75"/>
   
   <!-- Company name with fade in -->
-  <text x="80" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#2B4B6F">
+  <text x="80" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ff0b75">
     <animate attributeName="opacity"
              values="0;1"
              dur="1s"
@@ -125,3 +127,5 @@
              fill="freeze"/>
   </path>
 </svg>
+
+

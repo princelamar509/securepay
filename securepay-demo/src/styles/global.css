@@ -589,6 +589,10 @@ body {
 }
 
 
+
+
+
+
 /*
 .btn-caution {
   background-color: #007bff;
@@ -727,6 +731,15 @@ animation: slideIn 0.5s ease;
 
 
 
+
+
+
+
+
+
+
+
+
   @media screen and (max-width: 768px) {
     .home-container {
       padding: 1rem;
@@ -789,3 +802,7 @@ animation: slideIn 0.5s ease;
    height: 75px;
   }
 }
+
+
+
+

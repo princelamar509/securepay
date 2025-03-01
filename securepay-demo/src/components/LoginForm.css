@@ -35,11 +35,23 @@
   }
 
   .form-title {
-    color: #0369a1;
+    color: #560148;
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
     margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .form-fields {
@@ -85,24 +97,26 @@
     padding: 15px;
     border: none;
     border-radius: 12px;
-    background: #0369a1;
+    background: #560148;
     color: white;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+
   }
 
   .submit-button:hover {
-    background: #0284c7;
+    background: #040d11;
     transform: translateY(-2px);
+    border-bottom: 4px solid #7dd3fc;
   }
 
   .toggle-button {
     background: none;
     border: none;
-    color: #0369a1;
-    font-size: 0.9rem;
+    color: #82064c;
+    font-size: 1.2rem;
     margin-top: 20px;
     cursor: pointer;
     display: flex;
@@ -114,7 +128,8 @@
   }
 
   .toggle-button:hover {
-    color: #0284c7;
+    color: #7dd3fc;
+   
   }
 
   .error-message {
@@ -134,10 +149,10 @@
     height: 150px;
     background: linear-gradient(
       -45deg,
-      #bae6fd 33%,
-      #7dd3fc 33%,
-      #7dd3fc 66%,
-      #e0f2fe 66%
+      #08acf8 33%,
+      #51798b 33%,
+      #22a9e7 66%,
+      #1686d1 66%
     );
     background-size: 300% 100%;
     opacity: 0.1;
@@ -170,7 +185,7 @@
 
 
 .form-title1 {
-    color: #0284c7;
+    color: #82064c;
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
