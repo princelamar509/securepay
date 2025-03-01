@@ -217,7 +217,12 @@ body {
     background: linear-gradient(185deg, #121518 0%, #0f121c 100%);
   }
   
-  
+  .action-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+  }
  
   
   .btn-primary {
@@ -225,9 +230,11 @@ body {
     color: white;
     margin-top: 0.5rem;
     cursor: pointer;
-    align-items: center;
-    justify-content: center;   
+   width: 40%;  
+   height: 55px;
     margin-left: 1rem;
+   margin: 1rem;
+   white-space: nowrap;
   }
   
   .btn-primary svg {
@@ -238,13 +245,15 @@ body {
     background: linear-gradient(185deg, #2f061a 0%, #0f121c 100%);
   }
   .btn-secondary {
-    background: linear-gradient(135deg, #13151a 0%, #1f2937 100%);
+    background: #041110;
     color: white;
     margin-top: 0.5rem;
     cursor: pointer;
-    align-items: center;
      margin: 1rem;
-    justify-content: center;
+    transition: all 0.3s ease;
+    width: 40%;  
+   height: 55px;
+   white-space: nowrap;
   }
   
   .btn-logout {
@@ -801,6 +810,7 @@ animation: slideIn 0.5s ease;
    width: 280px;
    height: 75px;
   }
+
 }
 
 
