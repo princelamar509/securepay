@@ -203,10 +203,12 @@
   
 
   .auth-card.dark-mode {
-    background: url('https://www.shutterstock.com/shutterstock/videos/1023110074/thumb/1.jpg?ip=x480');
+    background: url('https://e0.pxfuel.com/wallpapers/30/409/desktop-wallpaper-dark-gothic-background-black-gothic.jpg') no-repeat ;
     color: #f4f8fa;
      border-radius: 19px ;
-
+     background-position:center;
+     background-size: cover;
+   
   }
 
 
@@ -224,8 +226,8 @@
 
 
 
-/*:root {
-    --wave-bg: #0284c7;
+:root {
+    --wave-bg: #ff0b75;
     --content-color: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.5);
     --wave-size: 430vh;
@@ -314,10 +316,9 @@
     justify-content: center;
     margin-bottom: 1rem;
 
-  }
+  } 
  
 
-  /* Responsive Design 
   @media (max-width: 768px) {
     .auth-card {
       padding: 30px 20px;
@@ -368,4 +369,4 @@
     border-color: #94a3b8;
   }
 
-  */
+  
