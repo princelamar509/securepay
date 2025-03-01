@@ -44,7 +44,7 @@ const AddMoneyPage = ({ user }) => {
           </select>
         </div>
 
-        <button type="submit" className="btn-primary">
+        <button type="submit" className="add-card-btn">
           Add Money
         </button>
         <button
