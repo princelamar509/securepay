@@ -2,7 +2,7 @@
 import React from 'react';
 import { Home, Send, History, Users, DivideCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import '../App.css';
+
 
 const BottomNav = ({ setCurrentView, currentView }) => {
   const navigate = useNavigate();

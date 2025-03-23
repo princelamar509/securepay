@@ -1,0 +1,992 @@
+/* UnifiedMoneyTransfer.css
+   A cohesive stylesheet for both SendMoneyPage and AddMoneyPage components */
+
+:root {
+  /* Color Variables */
+  --primary: #0ea5e9;              /* Sky 500 */
+  --primary-dark: #0284c7;         /* Sky 600 */
+  --primary-light: #e0f2fe;        /* Sky 100 */
+  --primary-transparent: rgba(14, 165, 233, 0.08);
+  --secondary: #8b5cf6;            /* Violet 500 */
+  --text-dark: #0f172a;            /* Slate 900 */
+  --text-medium: #475569;          /* Slate 600 */
+  --text-light: #94a3b8;           /* Slate 400 */
+  --bg-main: #f1f5f9;              /* Slate 100 */
+  --bg-card: #ffffff;              /* White */
+  --accent-green: #10b981;         /* Emerald 500 */
+  --accent-red: #ef4444;           /* Red 500 */
+  --accent-yellow: #f59e0b;        /* Amber 500 */
+  --accent-purple: #8b5cf6;        /* Violet 500 */
+  --border-color: #e2e8f0;         /* Slate 200 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+
+
+/* Main Layout Styles - Used by both pages */
+.page-container {
+  max-width: 1200px;
+  margin: 10 auto;
+  padding: 2rem;
+
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.back-button {
+  background: var(--bg-card);
+  border: none;
+  color: var(--text-medium);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  transform: translateX(-2px);
+}
+
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-left: 1rem;
+  letter-spacing: -0.025em;
+}
+
+/* Container Layout - Different class names for different pages */
+.send-money-container,
+.add-money-container { 
+
+  gap: 2rem;
+width: 100%;
+height: 100%;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .send-money-container,
+  .add-money-container {
+    grid-template-columns: 3fr minmax(300px, 1fr);
+  }
+}
+
+/* Form Card Styles - Common for both forms */
+.transfer-form,
+.deposit-form {
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(5px);
+  position: relative;
+  overflow: hidden;
+}
+
+.transfer-form::before,
+.deposit-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+/* Form Controls - Shared between pages */
+.form-group {
+  margin-bottom: 1.75rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-medium);
+  margin-bottom: 0.6rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+  background-color: white;
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.5rem;
+}
+
+.amount-group {
+  position: relative;
+}
+
+.amount-input {
+  position: relative;
+}
+
+.currency-icon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+}
+
+.amount-input input {
+  padding-left: 2.8rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.amount-display {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: white;
+  border-radius: 9999px;
+  margin-top: 0.75rem;
+  box-shadow: var(--shadow-md);
+}
+
+.message-input,
+.note-input {
+  min-height: 100px;
+  resize: vertical;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* Payment/Bank Selection - Shared style, different class names */
+.payment-options,
+.bank-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.payment-option,
+.bank-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.payment-option:hover,
+.bank-option:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.payment-option.selected,
+.bank-option.selected {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-transparent);
+}
+
+.payment-option svg,
+.bank-option svg {
+  padding: 0.6rem;
+  border-radius: 12px;
+  background: white;
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.payment-option.selected svg,
+.bank-option.selected svg {
+  background: var(--primary);
+  color: white;
+}
+
+.payment-details,
+.bank-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-details span,
+.bank-details span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.payment-details small,
+.bank-details small {
+  color: var(--text-medium);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* ID Verification for Send Money */
+.id-verification {
+  background-color: #fef2f2; /* Red 50 for alert */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border: 1px dashed #fca5a5; /* Red 300 */
+  position: relative;
+}
+
+.verification-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.verification-header svg {
+  color: var(--accent-red);
+  width: 24px;
+  height: 24px;
+}
+
+.verification-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.verification-note {
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.upload-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .upload-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.upload-section label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  margin-bottom: 0.75rem;
+}
+
+.upload-area {
+  border: 2px dashed #fca5a5; /* Red 300 */
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.upload-area:hover {
+  border-color: var(--accent-red);
+  background-color: #fffbfb;
+}
+
+.upload-area svg {
+  color: var(--accent-red);
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.upload-area p {
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.file-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #d1d5db;
+}
+
+.file-icon {
+  color: var(--accent-green);
+}
+
+.file-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.remove-file {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-file:hover {
+  background-color: #fee2e2;
+  color: var(--accent-red);
+}
+
+.upload-area.has-file {
+  border-style: solid;
+  border-color: #d1d5db;
+  padding: 1rem;
+}
+
+/* Transaction Summary - Used by both pages with different content */
+.transfer-summary,
+.deposit-summary {
+  background-color: var(--primary-light);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.summary-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+}
+
+.summary-detail span:first-child {
+  color: var(--text-medium);
+}
+
+.summary-detail span:last-child {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid #bfdbfe; /* Blue 200 */
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Button Styles - Consistent across both pages */
+.btn-primary {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  background: linear-gradient(to right, #93c5fd, #c4b5fd); /* Lighter gradient */
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  transition: all 0.2s ease;
+
+}
+
+.btn-close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Contacts Side Panel - For Send Money */
+.transfer-options {
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  height: fit-content;
+}
+
+.transfer-options::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--secondary), var(--primary));
+}
+
+.search-contacts {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.contact-search {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  padding-left: 3rem;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+ 
+}
+
+.contact-search:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+  background-color: white;
+}
+
+.search-contacts::before {
+  content: '\01F50D'; /* Unicode for magnifying glass */
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.contacts-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.recent-contacts h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-medium);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recent-contacts h3::before {
+  content: '\01F550'; /* Unicode for clock */
+  font-size: 1.2rem;
+}
+
+.contact-bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contact-bubble:hover {
+  transform: translateY(-3px);
+}
+
+.contact-initial {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-shortname {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.contact-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 1rem;
+  margin-top: 0.3rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+  overflow: hidden;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-item:hover {
+  background-color: var(--primary-light);
+}
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.contact-details {
+  flex: 1;
+}
+
+.contact-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.contact-info {
+  font-size: 0.85rem;
+  color: var(--text-medium);
+  margin-top: 0.25rem;
+}
+
+.no-results {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-medium);
+}
+
+/* Payment Methods Panel - For Add Money */
+.payment-methods {
+  background: var(--bg-card);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  height: fit-content;
+}
+
+.payment-methods::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--accent-green), var(--primary));
+}
+
+.payment-methods h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-medium);
+  margin-bottom: 1rem;
+}
+
+.saved-cards {
+  margin-bottom: 1.5rem;
+}
+
+.card-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background-color: var(--bg-main);
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.card-item:hover {
+  background-color: var(--primary-light);
+}
+
+.card-item.selected {
+  background-color: var(--primary-light);
+  border: 1px solid var(--primary);
+}
+
+.card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-icon svg {
+  color: var(--primary);
+}
+
+.card-info {
+  flex: 1;
+}
+
+.card-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.card-number {
+  font-size: 0.75rem;
+  color: var(--text-medium);
+}
+
+.add-new-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.add-new-card:hover {
+  text-decoration: underline;
+}
+
+/* Success Panel - Used by both Send/Add Money */
+.success-panel {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+}
+
+.success-icon svg {
+  color: var(--primary);
+  width: 40px;
+  height: 40px;
+}
+
+.success-panel h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.success-panel p {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+}
+
+/* Caution/Safety Warning - Used by both pages */
+.caution-section {
+  background: #fffbeb; /* Amber 50 */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  position: relative;
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--accent-yellow);
+}
+
+.caution-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.caution-header svg {
+  color: var(--accent-yellow);
+}
+
+.caution-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  flex: 1;
+}
+
+.caution-list {
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+}
+
+.caution-list li {
+  margin-bottom: 0.5rem;
+}
+
+.caution-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Benefits Section - Shared between pages */
+.transfer-benefits,
+.deposit-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.benefit-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-item svg {
+  padding: 0.75rem;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 0.75rem;
+}
+
+.benefit-text h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.benefit-text p {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .send-money-container,
+  .add-money-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .transfer-options,
+  .payment-methods {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1.5rem;
+  }
+  
+  .transfer-form,
+  .deposit-form {
+    padding: 1.5rem;
+  }
+  
+  .amount-display {
+    position: static;
+    display: inline-block;
+    margin-top: 0.75rem;
+  }
+  
+  .payment-options,
+  .bank-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .upload-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefit-item {
+    padding: 1.25rem;
+  }
+  
+  .transfer-benefits,
+  .deposit-benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .page-title {
+    margin-left: 0;
+  }
+  
+  .back-button {
+    align-self: flex-start;
+  }
+  
+  .transfer-form,
+  .deposit-form {
+    padding: 1.25rem;
+  }
+}

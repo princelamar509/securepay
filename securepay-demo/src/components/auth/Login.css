@@ -1,0 +1,376 @@
+/* SignInPage.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.signin-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.signin-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 600px;
+  display: flex;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Left side visual panel */
+.signin-visual-side {
+  flex: 1;
+  background: linear-gradient(120deg, #0ea5e9, #7e22ce);
+  color: white;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 6rem;
+}
+
+.visual-content {
+  position: relative;
+  z-index: 10;
+}
+
+.visual-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.visual-content p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+  max-width: 400px;
+}
+
+.decorative-dots {
+  position: absolute;
+  bottom: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  opacity: 0.1;
+  transform: rotate(-15deg);
+}
+
+.decorative-dots .dot {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* Right side form */
+.signin-form-side {
+  flex: 1;
+  background-color: white;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.form-panel {
+  width: 100%;
+}
+
+.form-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.form-subtitle {
+  color: #64748b;
+  margin-bottom: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+
+.input-wrapper {
+  position: relative;
+
+}
+
+.input-wrapper svg {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  font-size: 0.9375rem;
+  color: #0f172a;
+  transition: all 0.2s ease;
+  margin-left: 17px;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #0ea5e9;
+}
+
+.checkbox-wrapper label {
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.forgot-password {
+  font-size: 0.875rem;
+  color: #0ea5e9;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.primary-button {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary-button:hover {
+  background-color: #0284c7;
+}
+
+.primary-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #e2e8f0;
+}
+
+.or-divider span {
+  padding: 0 1rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.oauth-button {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: white;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.oauth-button:hover {
+  background-color: #f1f5f9;
+}
+
+.oauth-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.form-footer {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form-footer p {
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #0ea5e9;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.link-button:hover {
+  color: #0284c7;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .signin-visual-side {
+    padding: 2rem;
+  }
+  
+  .visual-content h1 {
+    font-size: 2rem;
+  }
+  
+  .signin-form-side {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .signin-wrapper {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .signin-visual-side {
+    padding: 2rem 1.5rem;
+  }
+  
+  .brand-logo {
+    margin-bottom: 2rem;
+  }
+  
+  .visual-content h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .visual-content p {
+    font-size: 1rem;
+  }
+  
+  .signin-form-side {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .signin-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+  }
+  
+  .signin-visual-side {
+    display: none;
+  }
+}

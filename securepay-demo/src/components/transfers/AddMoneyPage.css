@@ -1,0 +1,395 @@
+/* AddMoneyPage.css */
+
+/* Page Layout */
+.page-container {
+    padding: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+
+  }
+  
+  .page-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .back-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: #bb123c;
+    font-size: 1.75rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .back-button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .page-title {
+    margin-left: 1rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #07111c;
+  }
+  
+  .add-money-container {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 1.5rem;
+  
+  }
+  
+  /* Main Card Styles */
+  .add-money-card, 
+  .recent-activity-card {
+    background-color: #0b1b5c;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .add-money-card {
+    position: relative;
+  }
+  
+  .add-money-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f8f9fa;
+    margin-bottom: 2rem;
+  }
+  
+  .add-money-title svg {
+    color: #4361ee;
+  }
+  
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 0.875rem;
+    color: #ced4da;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input-with-icon {
+    position: relative;
+  }
+  
+  .input-with-icon svg {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #4361ee;
+  }
+  
+  .input-with-icon input,
+  .input-with-icon select {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 2.75rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #062d55;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .input-with-icon input:focus,
+  .input-with-icon select:focus {
+    outline: none;
+    border-color: #4361ee;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Transfer Type Options */
+  .transfer-type-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .transfer-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+  }
+  
+  .transfer-option:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .transfer-option.active {
+    background-color: rgba(67, 97, 238, 0.15);
+    border-color: #4361ee;
+  }
+  
+  .transfer-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: rgba(67, 97, 238, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .transfer-icon svg {
+    color: #4361ee;
+  }
+  
+  .transfer-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .transfer-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #f8f9fa;
+  }
+  
+  .transfer-fee {
+    font-size: 0.75rem;
+    color: #adb5bd;
+  }
+  
+  /* Notice Box */
+  .notice-box {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: rgba(251, 191, 36, 0.1);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .notice-box svg {
+    flex-shrink: 0;
+    color: #fbbf24;
+  }
+  
+  .notice-box p {
+    font-size: 0.8125rem;
+    color: #ced4da;
+    line-height: 1.5;
+  }
+  
+  /* Form Actions */
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .primary-button,
+  .secondary-button {
+    padding: 0.875rem;
+    border-radius: 10px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .primary-button {
+    background: linear-gradient(135deg, #4361ee, #7209b7);
+    color: white;
+    border: none;
+  }
+  
+  .primary-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+  }
+  
+  .primary-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .secondary-button {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f8f9fa;
+  }
+  
+  .secondary-button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  /* Success Message */
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    min-height: 300px;
+  }
+  
+  .success-message svg {
+    color: #4ade80;
+    margin-bottom: 1.5rem;
+  }
+  
+  .success-message h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f8f9fa;
+    margin-bottom: 0.75rem;
+  }
+  
+  .success-message p {
+    color: #ced4da;
+    line-height: 1.5;
+  }
+  
+  /* Recent Activity Card */
+  .recent-activity-card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-subtitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #f8f9fa;
+    margin-bottom: 1.5rem;
+  }
+  
+  .recent-transfers-list {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+  
+  .transfer-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  .transfer-item:last-child {
+    border-bottom: none;
+  }
+  
+  .transfer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .transfer-date {
+    font-size: 0.75rem;
+    color: #adb5bd;
+  }
+  
+  .transfer-source {
+    font-size: 0.875rem;
+    color: #f8f9fa;
+  }
+  
+  .transfer-amount {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #4cc9f0;
+  }
+  
+  .no-data-message {
+    text-align: center;
+    color: #adb5bd;
+    padding: 2rem 0;
+  }
+  
+  /* Limits Info */
+  .limits-info {
+    margin-top: auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+  
+  .limits-info h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #f8f9fa;
+    margin-bottom: 1rem;
+  }
+  
+  .limit-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8125rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .limit-item:first-of-type {
+    color: #f8f9fa;
+  }
+  
+  .limit-item:last-of-type {
+    margin-bottom: 1rem;
+    color: #ced4da;
+  }
+  
+  .limit-note {
+    font-size: 0.75rem;
+    color: #adb5bd;
+    font-style: italic;
+    margin-bottom: 6rem;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 900px) {
+    .add-money-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .page-container {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .transfer-type-options {
+      grid-template-columns: 1fr;
+    }
+    
+    .page-container {
+      padding: 1rem;
+    }
+    
+    .page-title {
+      font-size: 1.5rem;
+    }
+  }

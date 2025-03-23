@@ -33,7 +33,7 @@ const Navbar = () => {
           <Bell className="icon" />
         </button>
         {showTooltip && (
-          <div className="notification1">
+          <div className="notification">
             You have no new notifications
           </div>
         )}

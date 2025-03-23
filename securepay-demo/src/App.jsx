@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import BottomNav from './components/BottomNav';
-import HomeView from './components/HomeView';
+import { HashRouter as Router, Routes, Route, Navigate, HashRouter } from 'react-router-dom';
+import Navbar from './components/shared/Navbar';
+import BottomNav from './components/shared/BottomNav';
+import HomeView from './components/dashboard/HomeView';
 import SettingsView from './components/SettingsView';
-import SendMoneyPage from './components/SendMoneyPage';
-import AddMoneyPage from './components/AddMoneyPage';
+import SendMoneyPage from './components/transfers/SendMoneyPage';
+import AddMoneyPage from './components/transfers/AddMoneyPage';
 import HistoryPage from './components/HistoryPage';
 import ContactsPage from './components/ContactsPage';
-import LoginForm from './components/LoginForm';
-import CardPage from './components/CardPage'
-import Message from './components/Message';
+import LoginForm from './components/auth/LoginForm';
+
+import Message from './components/shared/Message';
+
+
+
 
 const mockUsers = {
   user123: {
@@ -33,6 +36,9 @@ const mockUsers = {
   },
 };
 
+const currentUser = mockUsers.user123;
+
+
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentView, setCurrentView] = useState('home');
@@ -43,26 +49,30 @@ function App() {
 
   useEffect(() => {
     const login = async () => {
-      // Simulate an API call
       await new Promise(resolve => setTimeout(resolve, 3000));
+      
+      // Check localStorage AFTER "loading"
+      const savedAuth = localStorage.getItem('isAuthenticated') === "true";
+      setIsAuthenticated(savedAuth);
       setLoading(false); 
     };
-
+  
     login();
   }, []);
+  
 
-
-  const PrivateRoute = ({ children }) => {
+  const PrivateRoute = ({  children }) => {
     return isAuthenticated ? children : <Navigate to="/signin" />;
   };
 
   return (
+   
     <Router>
      {loading ? (
         <Message /> 
       ) : (
       <div className="app-container">
-      <Message />
+     
         {isAuthenticated && <Navbar setCurrentView={setCurrentView} />}
         
         <main>
@@ -83,14 +93,15 @@ function App() {
                 </PrivateRoute>
               }
             />
-            <Route
-              path="/settings"
-              element={
-                <PrivateRoute>
-                  <SettingsView user={currentUser} />
-                </PrivateRoute>
-              }
-            />
+           <Route
+            path="/settings"
+            element={
+           <PrivateRoute>
+           <SettingsView user={currentUser} setIsAuthenticated={setIsAuthenticated} />
+           </PrivateRoute>
+           }
+        />
+
             <Route
               path="/send"
               element={
@@ -107,14 +118,7 @@ function App() {
                 </PrivateRoute>
               }
             />
-            <Route
-              path="/CardPage"
-              element={
-                <PrivateRoute>
-                  <CardPage user={currentUser} />
-                </PrivateRoute>
-              }
-            />
+         
             <Route
               path="/history"
               element={
@@ -123,6 +127,7 @@ function App() {
                 </PrivateRoute>
               }
             />
+         
             <Route
               path="/contacts"
               element={
@@ -141,6 +146,7 @@ function App() {
       </div>
       )}
     </Router>
+   
   );
 }
 

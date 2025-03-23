@@ -3,12 +3,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80">
   <defs>
     <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2B4B6F"/>
-      <stop offset="100%" style="stop-color:#1B3355"/>
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="100%" style="stop-color: #7e22ce"/>
     </linearGradient>
     <linearGradient id="shineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:rgba(255,255,255,0.2)"/>
-      <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+      <stop offset="0%" style="stop-color:rgba(231, 211, 211, 0.65)"/>
+      <stop offset="100%" style="stop-color:rgba(255, 251, 251, 0)"/>
     </linearGradient>
     
     <!-- Pulse animation -->
@@ -20,7 +20,7 @@
             
     <!-- Shield shine animation -->
     <linearGradient id="animatedShine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:rgba(228, 222, 222, 0)">
+      <stop offset="0%" style="stop-color:rgba(255, 255, 255, 0)">
         <animate attributeName="offset" 
                  values="-1;1"
                  dur="3s"
@@ -32,7 +32,7 @@
                  dur="3s"
                  repeatCount="indefinite"/>
       </stop>
-      <stop offset="100%" style="stop-color:rgba(255,255,255,0)">
+      <stop offset="100%" style="stop-color:rgb(228, 24, 24)">
         <animate attributeName="offset" 
                  values="0;2"
                  dur="3s"
@@ -41,8 +41,8 @@
     </linearGradient>
     <!-- Add a line gradient if needed -->
     <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#2B4B6F"/>
-      <stop offset="100%" style="stop-color:#1B3355"/>
+      <stop offset="0%" style="stop-color:#0ea5e9"/>
+      <stop offset="100%" style="stop-color: #7e22ce"/>
     </linearGradient>
   </defs>
   
@@ -53,7 +53,7 @@
            C65 35, 50 55, 35 35 
            Z" 
         fill="url(#shieldGradient)" 
-        stroke="#ff0b75" 
+        stroke="#fff" 
         stroke-width="1.5">
     <animate attributeName="fill-opacity"
              values="1;0.9;1"
@@ -71,7 +71,7 @@
   
   <!-- Enhanced lock body -->
   <rect x="43" y="25" width="14" height="15" rx="3" 
-        fill="white" stroke="#6e020c" stroke-width="0.8">
+        fill="white" stroke="#fff" stroke-width="0.8">
     <!-- Lock appear animation -->
     <animate attributeName="y"
              values="20;25"
@@ -98,7 +98,7 @@
   </path>
   
   <!-- Lock keyhole -->
-  <circle cx="50" cy="31" r="2" fill="#6e020c">
+  <circle cx="50" cy="31" r="2" fill=" #7e22ce">
     <animate attributeName="fill-opacity"
              values="1;0.7;1"
              dur="2s"
@@ -107,7 +107,7 @@
   <rect x="49" y="31" width="2" height="4" fill="#ff0b75"/>
   
   <!-- Company name with fade in -->
-  <text x="80" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ff0b75">
+  <text x="80" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#0ea5e9">
     <animate attributeName="opacity"
              values="0;1"
              dur="1s"
