@@ -1,5 +1,4 @@
-/* UnifiedMoneyTransfer.css
-   A cohesive stylesheet for both SendMoneyPage and AddMoneyPage components */
+/* UnifiedMoneyTransfer.css */
 
 :root {
   /* Color Variables */
@@ -26,7 +25,7 @@
 
 
 
-/* Main Layout Styles - Used by both pages */
+/* Main Layout Styles */
 .page-container {
   max-width: 1200px;
   margin: 10 auto;

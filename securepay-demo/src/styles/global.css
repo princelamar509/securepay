@@ -1,4 +1,16 @@
 /* Shared navigation styles */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
+
+  
+  /* Navigation bar styling */
 .navbar, .bottom-nav {
     background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);

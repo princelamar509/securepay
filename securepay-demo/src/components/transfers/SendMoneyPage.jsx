@@ -381,7 +381,7 @@ const SendMoneyPage = ({ user }) => {
             <ul className="caution-list">
               <li>Only send money to people you know and trust</li>
               <li>Verify recipient information before sending</li>
-              <li>For amounts ≥ $1,000, ID verification is required</li>
+              <li>For amounts equal to or above $1,000, ID verification is required</li>
               <li>Need help? Contact our support team at (1-800) 888-5567</li>
             </ul>
           </div>
