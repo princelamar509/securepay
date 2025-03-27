@@ -336,7 +336,6 @@ const HistoryPage = ({ user }) => {
         )}
       </div>
       
-      <Footer />
     </div>
   );
 };
